@@ -41,14 +41,15 @@ function generatePassword(){
     return ""
   }
 
-  alert(confirmation) 
-  
+  let approved = confirm(confirmation)
   let result = ""
-  while(result.length < length){
-    let i = Math.floor(Math.random() * set.length)
-    result += set[i]
+  
+  if(approved){
+    while(result.length < length){
+      let i = Math.floor(Math.random() * set.length)
+      result += set[i]
+    }
   }
-
   return result
 } 
 

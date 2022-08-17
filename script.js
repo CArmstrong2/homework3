@@ -3,7 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
   
-  let length = prompt("Please enter a desired password length (8 - 128)")
+  let length = prompt("Please enter a desired password length (8 - 128)") * 1
+  if(isNaN(length)){
+    alert("Please input a valid number.")
+    return ""
+  }
+  length = Math.floor(length)
+  
   let confirmation = "Generating " + length + "-character password with the following character sets:"
   let set = ""
 
